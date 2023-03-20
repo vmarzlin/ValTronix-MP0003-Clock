@@ -17,6 +17,8 @@ Le RESET, les tops d'horloge et le mode "run" (horloge active) sont affichés vi
 
 Les sorties sont protégées contre les courts-circuits et l'alimentation est protégée contre l'inversion de polarité.
 
+Mon article de blog complet sur ce projet est accessible dans [l'antre de ValTronix](https://valtronix.com/index.php/23-realisations/mini-plaquettes/50-mp0003-horloge-a-frequence-variable-avec-mode-pas-a-pas).
+
 Ma réalisation sur protoboard:
 ![Ma réalisation sur protoboard](MP0003_proto.jpg)
 
