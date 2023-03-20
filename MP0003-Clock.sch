@@ -8,10 +8,10 @@ Title "MP0003 Clock"
 Date "2023-01-22"
 Rev "1.0"
 Comp "ValTronix"
-Comment1 ""
+Comment1 "JP1 permet de choisir entre la source interne ou externe pour le signal d'horloge."
 Comment2 "Reset à la mise sous tension et lors de l'appui sur le bouton"
-Comment3 "Mode pas à pas sans rebond"
-Comment4 "Horloge débrayable à fréquence variable (ratio 50%)"
+Comment3 "Fréquence max. = 10MHz avec source externe de 20MHz"
+Comment4 "Horloge débrayable à fréquence variable (ratio 50%) - Mode pas à pas sans rebond"
 $EndDescr
 $Comp
 L Timer:NE555P U1
@@ -40,7 +40,7 @@ L Connector_Generic:Conn_01x06 J3
 U 1 1 6394FA13
 P 10500 3700
 F 0 "J3" H 10580 3692 50  0000 L CNN
-F 1 "Conn_01x06" H 10580 3601 50  0000 L CNN
+F 1 "Sortie" H 10580 3601 50  0000 L CNN
 F 2 "" H 10500 3700 50  0001 C CNN
 F 3 "~" H 10500 3700 50  0001 C CNN
 	1    10500 3700
@@ -242,13 +242,13 @@ CLK
 $Comp
 L Device:R_POT RV1
 U 1 1 63969D46
-P 2850 1150
-F 0 "RV1" H 2781 1196 50  0000 R CNN
-F 1 "50k" H 2781 1105 50  0000 R CNN
-F 2 "" H 2850 1150 50  0001 C CNN
-F 3 "~" H 2850 1150 50  0001 C CNN
-	1    2850 1150
-	1    0    0    -1  
+P 2850 1550
+F 0 "RV1" H 2781 1596 50  0000 R CNN
+F 1 "50k" H 2781 1505 50  0000 R CNN
+F 2 "" H 2850 1550 50  0001 C CNN
+F 3 "~" H 2850 1550 50  0001 C CNN
+	1    2850 1550
+	-1   0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR06
@@ -568,7 +568,7 @@ Wire Wire Line
 	1050 2200 1300 2200
 Text Label 1050 2200 0    50   ~ 0
 VCC
-Text Label 3400 7300 2    50   ~ 0
+Text Label 3150 7300 2    50   ~ 0
 STEP
 $Comp
 L Device:R R14
@@ -979,28 +979,17 @@ DIS
 $Comp
 L Device:R R5
 U 1 1 63CECA9D
-P 2850 1600
-F 0 "R5" H 2920 1646 50  0000 L CNN
-F 1 "1k" H 2920 1555 50  0000 L CNN
-F 2 "" V 2780 1600 50  0001 C CNN
-F 3 "~" H 2850 1600 50  0001 C CNN
-	1    2850 1600
+P 2850 1150
+F 0 "R5" H 2920 1196 50  0000 L CNN
+F 1 "1k" H 2920 1105 50  0000 L CNN
+F 2 "" V 2780 1150 50  0001 C CNN
+F 3 "~" H 2850 1150 50  0001 C CNN
+	1    2850 1150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2850 1750 2850 1800
+	2850 1700 2850 1800
 Connection ~ 2850 1800
-Wire Wire Line
-	3000 1150 3050 1150
-Wire Wire Line
-	3050 1150 3050 1350
-Wire Wire Line
-	3050 1350 2850 1350
-Wire Wire Line
-	2850 1350 2850 1300
-Wire Wire Line
-	2850 1350 2850 1400
-Connection ~ 2850 1350
 $Comp
 L power:VCC #PWR09
 U 1 1 63D0464E
@@ -1100,7 +1089,7 @@ Wire Wire Line
 	5400 7050 5800 7050
 Text Label 5400 7050 0    50   ~ 0
 HOLD_RDY
-Text Label 3400 6700 2    50   ~ 0
+Text Label 3150 6700 2    50   ~ 0
 ~STEP
 Wire Wire Line
 	8450 3600 8450 3650
@@ -1533,7 +1522,7 @@ L Connector_Generic:Conn_01x06 J2
 U 1 1 63D14A6B
 P 6650 4000
 F 0 "J2" H 6568 4417 50  0000 C CNN
-F 1 "Conn_01x06" H 6568 4326 50  0000 C CNN
+F 1 "Ext. Sw." H 6568 4326 50  0000 C CNN
 F 2 "" H 6650 4000 50  0001 C CNN
 F 3 "~" H 6650 4000 50  0001 C CNN
 	1    6650 4000
@@ -1595,7 +1584,7 @@ L ValTronix:SW_Push_DPDT_8x8 SW2
 U 1 1 63BFFCD0
 P 1100 7000
 F 0 "SW2" H 1100 7281 50  0000 C CNN
-F 1 "SW_Push_DPDT_8x8" H 1100 7190 50  0000 C CNN
+F 1 "STEP" H 1100 7190 50  0000 C CNN
 F 2 "ValTronix:SW_Push_DPDT_8x8mm" H 1100 7000 50  0001 C CNN
 F 3 "~" H 1100 7000 50  0001 C CNN
 	1    1100 7000
@@ -1619,7 +1608,7 @@ L ValTronix:SW_Push_DPDT_8x8 SW2
 U 2 1 63C4471A
 P 1700 5500
 F 0 "SW2" H 1700 5781 50  0000 C CNN
-F 1 "SW_Push_DPDT_8x8" H 1700 5690 50  0000 C CNN
+F 1 "STEP" H 1700 5690 50  0000 C CNN
 F 2 "ValTronix:SW_Push_DPDT_8x8mm" H 1700 5500 50  0001 C CNN
 F 3 "~" H 1700 5500 50  0001 C CNN
 	2    1700 5500
@@ -1632,7 +1621,7 @@ NoConn ~ 1900 5400
 NoConn ~ 1900 5600
 NoConn ~ 1500 5500
 Text Notes 550  650  0    75   ~ 15
-Horloge 1-44Hz
+Horloge 1-48Hz
 Wire Notes Line width 10
 	550  700  3250 700 
 Wire Notes Line width 10
@@ -1644,35 +1633,15 @@ Wire Notes Line width 10
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 63D1BB80
-P 2150 1300
-F 0 "J1" H 2068 1517 50  0000 C CNN
-F 1 "Conn_01x02" H 2068 1426 50  0000 C CNN
-F 2 "" H 2150 1300 50  0001 C CNN
-F 3 "~" H 2150 1300 50  0001 C CNN
-	1    2150 1300
+P 2200 1350
+F 0 "J1" H 2118 1567 50  0000 C CNN
+F 1 "Ext. Pot." H 2118 1476 50  0000 C CNN
+F 2 "" H 2200 1350 50  0001 C CNN
+F 3 "~" H 2200 1350 50  0001 C CNN
+	1    2200 1350
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	2350 1400 2850 1400
-Connection ~ 2850 1400
-Wire Wire Line
-	2850 1400 2850 1450
-Wire Wire Line
-	2350 1300 2550 1300
-Wire Wire Line
-	2550 1300 2550 950 
-$Comp
-L power:VCC #PWR08
-U 1 1 63D64864
-P 2550 950
-F 0 "#PWR08" H 2550 800 50  0001 C CNN
-F 1 "VCC" H 2565 1123 50  0000 C CNN
-F 2 "" H 2550 950 50  0001 C CNN
-F 3 "" H 2550 950 50  0001 C CNN
-	1    2550 950 
-	1    0    0    -1  
-$EndComp
-Text Label 2550 1400 2    30   ~ 0
+Text Label 2650 1350 2    30   ~ 0
 Trim
 Text Notes 9450 3800 0    50   ~ 0
 <19mA
@@ -1730,10 +1699,6 @@ Wire Notes Line width 10
 	550  5900 550  7700
 Wire Notes Line width 10
 	550  7700 4400 7700
-Wire Notes Line width 10
-	4400 7700 4400 5900
-Wire Notes Line width 10
-	4400 5900 550  5900
 Wire Notes Line width 10
 	3650 2750 6300 2750
 Wire Notes Line width 10
@@ -1899,4 +1864,29 @@ Text Label 6650 2550 0    50   ~ 0
 CP
 Wire Wire Line
 	6900 2650 6900 2550
+Text Notes 1200 4200 0    50   ~ 10
+RUN
+Text Notes 1200 4400 0    50   ~ 10
+HOLD
+Wire Notes Line width 10
+	4400 7700 4400 5900
+Wire Notes Line width 10
+	4400 5900 550  5900
+Wire Wire Line
+	2850 1300 2850 1350
+Wire Wire Line
+	2400 1450 2650 1450
+Wire Wire Line
+	2650 1450 2650 1550
+Connection ~ 2650 1800
+Wire Wire Line
+	2700 1550 2650 1550
+Connection ~ 2650 1550
+Wire Wire Line
+	2650 1550 2650 1800
+Wire Wire Line
+	2850 1350 2400 1350
+Connection ~ 2850 1350
+Wire Wire Line
+	2850 1350 2850 1400
 $EndSCHEMATC
