@@ -17,6 +17,7 @@ Le RESET, les tops d'horloge et le mode "run" (horloge active) sont affichés vi
 
 Les sorties sont protégées contre les courts-circuits et l'alimentation est protégée contre l'inversion de polarité.
 
+Ma réalisation sur protoboard:
 ![Ma réalisation sur protoboard](MP0003_proto.jpg)
 
 Le brochage de sortie sur ma protoboard est (dans le sens de la photo, de gauche à droite):
@@ -26,3 +27,6 @@ Le brochage de sortie sur ma protoboard est (dans le sens de la photo, de gauche
  4. RESET (actif haut)
  5. !RESET (actif bas)
  6. GND
+
+Exemple de diagramme de temps:
+![Diagrame temporel, horloge lente](Clock_slow.png)
